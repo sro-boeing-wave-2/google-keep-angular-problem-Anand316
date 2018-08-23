@@ -1,0 +1,13 @@
+mat-card{
+  width:25%;
+  margin:auto;
+  margin-top: 20px;
+  background-color:lightblue;
+}
+mat-card input{
+ width:100%;
+}
+
+mat-card textarea{
+  width:100%;
+}

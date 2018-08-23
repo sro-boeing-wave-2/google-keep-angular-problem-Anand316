@@ -1,0 +1,20 @@
+{
+  "name": "google-keep-angular-problem-Anand316",
+  "version": "1.0.0",
+  "description": "The objective of this assignment is to understand the fundamentals of Angular. By the end of the assignment you should be able to understand\r - Modules\r - Components\r - Angular Material\r - Data Binding\r - Dependency Injection\r - Services",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sro-boeing-wave-2/google-keep-angular-problem-Anand316.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sro-boeing-wave-2/google-keep-angular-problem-Anand316/issues"
+  },
+  "homepage": "https://github.com/sro-boeing-wave-2/google-keep-angular-problem-Anand316#readme"
+}

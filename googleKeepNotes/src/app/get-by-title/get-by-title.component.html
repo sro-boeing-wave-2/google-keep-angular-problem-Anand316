@@ -1,0 +1,31 @@
+<mat-grid-list class="gridview" cols="4" gutterSize="5px">
+  <mat-grid-tile *ngFor="let note of notes" [colspan]="1">
+    <mat-card class="example-card">
+      <input type="checkbox" [(ngModel)]="note.pinStatus">
+      <a class="EditIcon" data-toggle="tooltip" data-placement="bottom" title="Edit" routerLink='' (click)=onEdit(note)>
+        <mat-icon aria-label="Side nav toggle icon" class="button btn">edit</mat-icon>
+      </a>
+      <a class="DelIcon" data-toggle="tooltip" data-placement="bottom" title="Delete" routerLink='' (click)=onClick(note)>
+        <mat-icon aria-label="Side nav toggle icon" class="button btn">delete</mat-icon>
+      </a>
+      <hr>
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{note.title}}</mat-card-title>
+      </mat-card-header><hr>
+      <mat-card-content>
+        <p>
+          {{note.plainText}}
+        </p>
+
+        <ul *ngFor="let Label of note.labels">
+          <li>{{Label.label}}</li>
+        </ul>
+
+        <ul *ngFor="let check of note.checkList">
+          <li>{{check.checkListItem}}</li>
+        </ul>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

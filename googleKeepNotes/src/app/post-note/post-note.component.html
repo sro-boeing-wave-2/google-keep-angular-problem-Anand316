@@ -1,0 +1,116 @@
+<!-- <div class="container-fluid">
+  <h1>Bootcamp Enrollment Form</h1>
+  <div>
+    <form #userForm="ngForm" *ngIf='!submitted' (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <label>Id:
+        <input type="text" class="form-control" [(ngModel)]="noteModel.id" name="id">
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label>Title</label>
+        <input type="text" class="form-control" [(ngModel)]="noteModel.title" name="title">
+      </div>
+
+      <div class="form-group">
+        <label>PlainText</label>
+        <input type="email" class="form-control" [(ngModel)]="noteModel.plaintext" name="plainText">
+      </div>
+
+      <div class="form-group">
+        <label>PinStatus</label>
+        <input type="tel" class="form-control" [(ngModel)]="noteModel.pinstatus" name="pinStatus">
+      </div>
+
+      <div class="form-group">
+        <label>CheckList</label>
+        <input type="tel" class="form-control" [(ngModel)]="noteModel.checkList" name="checkList">
+      </div>
+
+      <div class="form-group">
+        <label>Label</label>
+        <input type="tel" class="form-control" [(ngModel)]="noteModel.labels" name="labels">
+      </div>
+
+      <div></div>
+
+      <button class="btn btn-primary">Submit</button>
+
+    </form>
+  </div>
+</div> -->
+
+
+<mat-card class="example-card">
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+
+    <div>
+      <input formControlName="id" placeholder="Enter Id">
+    </div>
+    <br>
+
+      <div>
+      <input formControlName="title" placeholder="Title">
+    </div><br>
+
+      <textarea formControlName="plaintext" placeholder="PlainText" width=100%></textarea><br>
+
+    <!-- <div *ngIf="myForm.controls.plaintext.hasError('required')">
+    Write something longer please!
+  </div> -->
+     <div>
+      <input formControlName="pinstatus" placeholder="PinStatus">
+    </div>
+    <br>
+
+    <div formArrayName="checkList">
+      <div *ngFor="let checkListItem of myForm.get('checkList').controls; let i = index;">
+        <div [formGroupName]="i">
+          <input formControlName="checkListItem" placeholder="checkListItem">
+        </div>
+      </div>
+      <a class="button btn" (click)="addItem()">Add More checkListItems...</a>
+    </div>
+    <br>
+
+    <div formArrayName="labels">
+      <div *ngFor="let tag of myForm.get('labels').controls; let i = index;">
+        <div [formGroupName]="i">
+          <input formControlName="label" placeholder="Label">
+        </div>
+      </div>
+      <a class="button btn" (click)="addLabel()">Add More Labels...</a>
+    </div>
+    <br>
+
+    <button type="submit">
+      Create
+    </button>
+  </form>
+</mat-card>
+
+<!-- <div formArrayName="checkList">
+  <h2>CheckList</h2>
+  <div *ngFor="let checkListItem of myForm.get('checkList').controls; let i = index;">
+    <div [formGroupName]="i">
+      <input formControlName="id" placeholder="Item id">
+      <input formControlName="checkListItemOne" placeholder="checkListItemOne">
+      <input formControlName="checkListItemTwo" placeholder="checkListItemTwo">
+    </div>
+    <button class="btn btn-success" (click)="createItem()">Add</button>
+  </div>
+
+</div>
+
+<div formArrayName="labels">
+  <h2>Label</h2>
+  <div *ngFor="let tag of myForm.get('labels').controls; let i = index;">
+    <div [formGroupName]="i">
+      <input formControlName="id" placeholder="Label Id">
+      <input formControlName="label" placeholder="Label">
+
+    </div>
+    <button class="btn btn-success" (click)="createItem()">Add</button>
+  </div> -->

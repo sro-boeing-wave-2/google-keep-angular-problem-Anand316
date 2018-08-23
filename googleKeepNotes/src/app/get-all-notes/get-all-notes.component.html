@@ -1,0 +1,113 @@
+<mat-grid-list class="gridview" cols="4" gutterSize="5px">
+    <mat-grid-tile *ngFor="let note of notes" [colspan]="1">
+      <mat-card class="example-card">
+    <input type="checkbox" [(ngModel)]="note.pinStatus">
+    <a class="EditIcon" data-toggle="tooltip" data-placement="bottom" title="Edit" routerLink='' (click)=onEdit(note)><mat-icon aria-label="Side nav toggle icon" class="button btn">edit</mat-icon></a>
+    <a class="DelIcon"data-toggle="tooltip" data-placement="bottom" title="Delete" routerLink='' (click)=onClick(note)><mat-icon aria-label="Side nav toggle icon" class="button btn">delete</mat-icon></a><hr>
+<mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{note.title}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content><hr>
+    <p>
+      {{note.plainText}}
+    </p>
+
+    <p *ngFor="let Label of note.labels">
+      Label : {{Label.label}}
+    <p>
+
+      <label>CheckList : </label>
+    <ul *ngFor="let check of note.checkList">
+      <li>{{check.checkListItem}}</li>
+    </ul>
+
+  </mat-card-content>
+</mat-card>
+</mat-grid-tile>
+</mat-grid-list>
+
+
+
+<!-- <mat-grid-list class="gridview" cols="4" gutterSize="5px">
+  <mat-grid-tile *ngFor="let note of notes" [colspan]="1">
+    <mat-card class="example-card">
+
+      <mat-card-header>
+        <mat-card-title>{{note.title}}</mat-card-title>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <mat-icon>dialpad</mat-icon>
+              <span>Redial</span>
+            </button>
+            <button mat-menu-item disabled>
+              <mat-icon>voicemail</mat-icon>
+              <span>Check voicemail</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon>notifications_off</mat-icon>
+              <span>Disable alerts</span>
+            </button>
+          </mat-menu>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          {{note.plainText}}
+        </p>
+      </mat-card-content>
+
+      <mat-card-content>
+        <p>
+          {{note.pinStatus}}
+        </p>
+      </mat-card-content>
+
+      <mat-card-content>
+        <p *ngFor="let lab of note.labels">
+          {{lab.label}}
+        </p>
+      </mat-card-content>
+
+      <mat-card-content>
+        <p *ngFor="let chk of note.checkList">
+          {{chk.checkListItemOne}}
+        </p>
+      </mat-card-content>
+
+      <mat-card-content>
+        <a routerLink='' (click)=onEdit(note)><mat-icon aria-label="Side nav toggle icon">edit</mat-icon></a>
+        <a routerLink='' (click)=onClick(note)><mat-icon aria-label="Side nav toggle icon">delete</mat-icon></a>
+        <!-- <mat-icon svgIcon="delete-icon"></mat-icon> -->
+      <!-- </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list> -->
+
+<!-- <div class="card mb-3">
+  <div class="card-header">
+    Notes
+  </div>
+  <div class="card-deck m-0 justify-content-center card_deck_1">
+
+    <div class="col-md-4 col-sm-8" *ngFor="let note of notes">
+      <div class="card m-0 mb-2">
+        <div class="card-header font-weight-bold bg-primary text-center">
+          {{note.title}}
+        </div>
+        <div class="card-body">
+          <p>{{note.plainText}}</p>
+          <p *ngFor="let lab of note.labels">{{lab.label}}</p>
+          <p *ngFor="let item of note.checkList">{{item.checkListItemOne}} <br> {{item.checkListItemTwo}}</p>
+          <button class="btn btn-outline-danger align-right" (click)=onClick(note)>Delelte</button>
+          <a class="button btn btn-outline-secondary align-left" (click)=onEdit(note)>Edit</a>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<a routerLink='' class="button btn btn-primary">Back</a> -->

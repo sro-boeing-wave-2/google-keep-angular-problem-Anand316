@@ -1,0 +1,69 @@
+.sidenav-container {
+  height:100%;
+  color:black;
+}
+
+.sidenav {
+ width: 200px;
+ box-shadow: 3px 0 6px rgba(0,0,0,0.24);
+}
+
+.mat-toolbar.mat-primary {
+ position: sticky;
+ top: 0;
+ color:black;
+}
+
+.mat-drawer-content{
+  background-color: #E5E7E9;
+}
+
+mat-toolbar[_ngcontent-c1] a[_ngcontent-c1]{
+  color:black;
+}
+
+/* @media (min-width: 768px){
+.sidenav{
+ display : none;
+}
+} */
+
+.hidden{
+ display : none;
+}
+
+.space{
+ flex: 1 1 auto;
+}
+
+mat-toolbar a {
+ display : inline-block;
+ margin: 0 8px;
+ color: white;
+ text-decoration-style: none;
+}
+
+
+.note {
+  outline: none;
+  box-shadow: 0 2px 1px rgba(0,0,0,0.08);
+  box-sizing: border-box;
+
+  max-width: 600px;
+  min-width: 240px;
+  margin: 20px;
+
+  background-color: rgb(255, 255, 255);
+}
+
+.Change{
+  background-color:black;
+}
+
+.mat-toolbar.mat-primary{
+  background-color:#F5B041;
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row{
+  height:50px;
+}

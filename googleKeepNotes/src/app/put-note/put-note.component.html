@@ -1,0 +1,41 @@
+<mat-card>
+<div class="container-fluid">
+  <div>
+    <form #userForm="ngForm" *ngIf='!submitted' (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <label>Id:
+        <input type="text" class="form-control" [(ngModel)]="noteModel.id" name="id">
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label>Title</label>
+        <input type="text" class="form-control" [(ngModel)]="noteModel.title" name="title">
+      </div>
+
+      <div class="form-group">
+        <label>PlainText</label>
+        <textarea type="email" class="form-control" [(ngModel)]="noteModel.plainText" name="plainText"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>PinStatus</label>
+        <input type="tel" class="form-control" [(ngModel)]="noteModel.pinStatus" name="pinStatus">
+      </div>
+
+      <div class="form-group">
+        <label>CheckList</label>
+        <input type="tel" class="form-control" [(ngModel)]="noteModel.checkList" name="checkList">
+      </div>
+
+      <div class="form-group">
+        <label>Label</label>
+        <input type="tel" class="form-control" [(ngModel)]="noteModel.labels" name="labels">
+      </div>
+      <button class="btn btn-secondary">Update</button>
+
+    </form>
+  </div>
+</div>
+</mat-card>

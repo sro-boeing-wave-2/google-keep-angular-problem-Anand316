@@ -1,0 +1,61 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" [ngClass]="{hidden: !(isHandset$ | async)}" fixedInViewport="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
+    <mat-toolbar color="primary">Menu</mat-toolbar>
+    <mat-nav-list>
+      <button routerLink='/notes' class="btn btn-success">Notes</button>
+      <button routerLink='/create' class="btn btn-primary">New Note</button>
+      <a mat-list-item href="#">Link 3</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="Change">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Google Keep Notes</span>
+
+
+      <form class="form-inline waves-light mx-auto" mdbWavesEffect>
+        <div class="md-form">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="title" [(ngModel)]="title">
+          <button mdbBtn color="success" outline="true" size="sm" class="my-0 waves-light" type="submit" mdbWavesEffect (click)=search(title)>Search</button>
+        </div>
+      </form>
+
+      <span class="spacer"></span>
+      <a data-toggle="tooltip" data-placement="bottom" title="Home" routerLink=''class="button">
+        <mat-icon aria-label="Side nav toggle icon">home</mat-icon>
+      </a>
+      <a data-toggle="tooltip" data-placement="bottom" title="New Note" routerLink='/create' class="button">
+        <mat-icon aria-label="Side nav toggle icon">note_add</mat-icon>
+      </a>
+      <a href="#" data-toggle="tooltip" data-placement="bottom" title="Label">
+        <mat-icon aria-label="Side nav toggle icon">label</mat-icon>
+      </a>
+      <a href="#" data-toggle="tooltip" data-placement="bottom" title="Help">
+        <mat-icon aria-label="Side nav toggle icon">help</mat-icon>
+      </a>
+
+      <a href="#" data-toggle="tooltip" data-placement="bottom" title="Settings">
+          <mat-icon aria-label="Side nav toggle icon">settings</mat-icon>
+        </a>
+
+      <a href="#" data-toggle="tooltip" data-placement="bottom" title="Account">
+          <mat-icon aria-label="Side nav toggle icon">perm_identity</mat-icon>
+        </a>
+    </mat-toolbar>
+    <ng-content>
+
+    </ng-content>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+
+
+
+
+
